@@ -7,7 +7,7 @@ import { RouterOutlet } from "@angular/router";
     <header class="border-b border-slate-200 p-2 bg-yellow-500">
       <menu-list></menu-list>
     </header>
-    <section class="bg-slate-100 h-full">
+    <section class="bg-slate-50 h-full">
      <router-outlet></router-outlet>
     </section>
   `,

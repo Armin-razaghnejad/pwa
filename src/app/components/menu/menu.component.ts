@@ -1,12 +1,12 @@
 import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   template: `
     <ul class="flex gap-2 justify-center">
       <ng-container *ngFor="let item of menuItems">
-        <li [routerLink]="[item.path]" class="cursor-pointer font-medium hover:bg-white leading-9 px-2 rounded-md transition-colors duration-150 text-sm">
+        <li [routerLink]="[item.path]" routerLinkActive="bg-white" [routerLinkActiveOptions]="{ exact: true }" class="cursor-pointer font-medium leading-9 px-2 rounded-md transition-colors duration-150 text-sm">
           {{item.name}}
         </li>
       </ng-container>
@@ -15,7 +15,8 @@ import { RouterLink } from "@angular/router";
   selector: 'menu-list',
   imports: [
     NgFor,
-    RouterLink
+    RouterLink,
+    RouterLinkActive,
   ],
   standalone: true
 })

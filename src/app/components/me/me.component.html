@@ -1,1 +1,42 @@
-hello
+<div class="m-2 p-4 border border-slate-200 rounded-md">
+  <p class="text-center text-slate-700 border-b border-slate-200 mb-2 pb-2 font-medium"> {{ service.arminsData.fields }} </p>
+  <div class="grid grid-cols-2 bg-sky-100 p-2 leading-7">
+    <p class="col-span-full">
+      full Name: <span class="font-medium">{{service.arminsData.fullName}}</span>
+    </p>
+    <p>
+      BirthDate: <span class="font-medium">{{ service.arminsData.birthDate | date:'Y/M/d' }}</span>
+    </p>
+    <p>
+      Phone: <span class="font-medium">{{ service.arminsData.phone }}</span>
+    </p>
+    <p class="col-span-full">
+      Address: <span class="font-medium">{{ service.arminsData.address }}</span>
+    </p>
+  </div>
+  <h2 class="text-base mt-2">Skills</h2>
+  <ul>
+    <ng-container *ngFor="let item of service.arminsData.skills | keyvalue">
+      <li class="border-b border-slate-100 px-2 mb-2">
+        <p class="mb-1">{{item.key}}: </p>
+        <ng-container *ngFor="let i of item.value | keyvalue">
+          <div class="bg-yellow-100 leading-7 px-2">
+            {{i.key}}:{{i.value}}
+          </div>
+        </ng-container>
+      </li>
+    </ng-container>
+  </ul>
+  <h2 class="text-base mt-2">Work Expreience</h2>
+  <ul>
+    <ng-container *ngFor="let item of service.arminsData.workExpreience">
+      <li class="border-b border-slate-100 px-2 mb-2">
+        <p>Company Name: <span class="font-medium">{{item.coName}}</span></p>
+        <p>Field: <span class="font-medium">{{item.field}}</span></p>
+        <p>{{item.startDate | date:'Y/M/d'}} - {{(item.endDate | date:'Y/M/d') || 'present'}}</p>
+      </li>
+    </ng-container>
+  </ul>
+  <h2 class="text-base mt-2">Work Expreience</h2>
+  <p class="font-medium ml-2">{{service.arminsData.education}}</p>
+</div>
