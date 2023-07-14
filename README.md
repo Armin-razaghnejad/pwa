@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
+## Run As PWA App
+
+Connect your mobile device and development machine to the same local network (e.g., Wi-Fi).
+
+Find the local IP address of your development machine.
+
+Start your Angular development server by running `ng serve --host 0.0.0.0` to listen on all available network interfaces.
+
+On your mobile device, open a web browser and enter the IP address followed by the port number (e.g., http://192.168.0.10:4200) to access your Angular app.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
