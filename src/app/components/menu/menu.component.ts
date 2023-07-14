@@ -23,13 +23,16 @@ import { RouterLink } from "@angular/router";
 export class MenuComponent {
   menuItems = [
     {
-      path: '/me', name:'About Me'
+      path: '/app', name:'Home'
     },
     {
-      path: '/contact', name:'Contact'
+      path: 'me', name:'About Me'
     },
     {
-      path: '/donate', name:'Donate'
+      path: 'contact', name:'Contact'
+    },
+    {
+      path: 'donate', name:'Donate'
     }
   ]
 }
